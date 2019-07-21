@@ -8,10 +8,10 @@ public class Player_Controller : MonoBehaviour{
 
  private Rigidbody rb;
 
- void Start ()
-{
-    rb = GetComponent<Rigidbody>();
-}
+  void Start ()
+  {
+      rb = GetComponent<Rigidbody>();
+  }
 
   
   void FixedUpdate ()
