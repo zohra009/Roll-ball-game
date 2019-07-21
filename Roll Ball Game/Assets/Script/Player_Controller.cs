@@ -1,16 +1,21 @@
 ﻿using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Controller : MonoBehaviour{
  
  public float speed;
+ public Text countText;
 
  private Rigidbody rb;
+ private int count;
 
   void Start ()
   {
       rb = GetComponent<Rigidbody>();
+      count = 0;
+      SetCountText ();
   }
 
   
@@ -28,7 +33,13 @@ public class Player_Controller : MonoBehaviour{
     if(other.gameObject.CompareTag("Pick Up"))
     {
       other.gameObject.SetActive(false);
+      count = count + 1;
+      SetCountText ();
     }
+  }
+  void SetCountText () 
+  {
+    countText.text = "Count: " + count.ToString ();
   }
 }
   
